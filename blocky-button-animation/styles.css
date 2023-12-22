@@ -1,0 +1,71 @@
+/* Base styles to run index.html */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.button {
+    position: absolute;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    background-color: #ccd5ffff;
+    height: 50px;
+    width: 100px;
+}
+
+.button::after {
+    z-index: -1;
+    position: absolute;
+    bottom: 0px;
+    left: 99%;
+    content: '';
+    display: inline-block;
+    border: 1px solid #000;
+    background-color: #000;
+    /* height: 48px; */
+    height: calc(100% - 1px);;
+    width: 0px;
+    transition: all .3s ease;
+}
+
+.button:hover::after {
+    bottom: -4px;
+    left: 100%;
+    transform: skewY(34deg);
+    height: 50px;
+    width: 4px;
+    transition: all .3s ease;
+}
+
+.button::before {
+    z-index: -1;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    content: '';
+    display: inline-block;
+    border: 1px solid #000;
+    background-color: #000;
+    height: 0px;
+    width: 99px;
+    transition: all .3s ease;
+}
+
+.button:hover::before {
+    bottom: -6px;
+    right: -4px;
+    transform: skewX(34deg);
+    height: 4px;
+    width: 100px;
+    transition: all .3s ease;
+}

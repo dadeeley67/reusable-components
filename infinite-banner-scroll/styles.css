@@ -1,17 +1,17 @@
 /* Base styles to run index.html */
 * {
     margin: 0;
+    box-sizing: border-box;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
 }
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    flex-direction: column;
 }
 
 /* Infinite Banner Scroll */
@@ -56,12 +56,12 @@ body {
 
 .scroll div span {
     display: inline-flex;
-    margin: 10px;
-    letter-spacing: 0.2em;
-    background: #333;
-    color: #fff;
-    padding: 5px 10px;
     border-radius: 5px;
+    margin: 10px;
+    background: #333;
+    padding: 5px 10px;
+    letter-spacing: 0.2em;
+    color: #fff;
     transition: 0.5s;
 }
 
@@ -72,8 +72,8 @@ body {
 
 .imgBox div {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 /* Use these settings if you don't want images to be one long banner */
