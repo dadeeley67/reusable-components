@@ -76,3 +76,21 @@ body {
     width: 100%;
     transition: all .3s ease;
 }
+
+.button.thick:hover::after {
+    bottom: -5px;
+    left: 100%;
+    transform: skewY(30deg);
+    height: 100%;
+    width: 8px;
+    transition: all .3s ease;
+}
+
+.button.thick:hover::before {
+    bottom: -8px;
+    right: -6px;
+    transform: skewX(44deg);
+    height: 6px;
+    width: 100%;
+    transition: all .3s ease;
+}
