@@ -1,0 +1,76 @@
+/* Base styles to run index.html */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.button-container {
+    position: relative;
+    height: 30em;
+    width: 30em;
+}
+
+.button {
+    position: absolute;
+    background-color: #ccd5ffff;
+    height: 100%;
+    width: 100%;
+}
+
+.button:active {
+    background-color: beige;
+}
+
+.button::after {
+    z-index: -1;
+    position: absolute;
+    top: 1%;
+    left: -1%;
+    content: '';
+    display: inline-block;
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease;
+}
+
+.button:hover::after {
+    top: 3%;
+    left: 100%;
+    transform: skewY(37deg);
+    height: 100%;
+    width: 8%;
+    transition: all .3s ease;
+}
+
+.button::before {
+    z-index: -1;
+    position: absolute;
+    bottom: 1%;
+    right: -1%;
+    content: '';
+    display: inline-block;
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease;
+}
+
+.button:hover::before {
+    bottom: -6%;
+    right: -4%;
+    transform: skewX(53deg);
+    height: 6%;
+    width: 100%;
+    transition: all .3s ease;
+}
