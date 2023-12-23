@@ -1,0 +1,85 @@
+/* Base styles to run index.html */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Infinite Element Scroll */
+.scroll {
+    position: relative;
+    display: flex;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    background-color: #8dcac6;
+    width: 100%;
+    overflow: hidden;
+    --time: 25s;
+}
+
+.scroll div {
+    white-space: nowrap;
+    animation: scroll var(--time) linear infinite;
+    animation-delay: calc(var(--time)*-1);
+}
+
+.scroll div:nth-child(2) {
+    animation: scroll2 var(--time) linear infinite;
+    animation-delay: calc(var(--time)/-2);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.scroll div span {
+    display: inline-flex;
+    border-radius: 5px;
+    margin: 10px;
+    /* background: #333; */
+    padding: 5px 10px;
+    letter-spacing: 0.2em;
+    color: #fff;
+    transition: 0.5s;
+}
+
+/* .scroll div span:hover {
+    background: #3fd2f9;
+    cursor: pointer;
+} */
+
+.pic {
+    margin: .5em;
+    vertical-align: middle;
+}
+/* picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+} */
