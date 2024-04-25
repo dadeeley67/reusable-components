@@ -1,0 +1,183 @@
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+/* improves punctuation in supported browsers */
+html {
+  color-scheme: dark light;
+  hanging-punctuation: first last;
+}
+
+/* min body height */
+body {
+  min-height: 100svh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Improved heading in supported browsers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+/* improve readability with max-width on paragraphs and lists */
+/* prevent orphans in supported browsers */
+p,
+li {
+  max-width: var(--p-max-width, 65ch);
+  text-wrap: pretty;
+}
+
+.site-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+section {
+  padding-block: 1rem;
+}
+
+.card-diagonal {
+  /* --skew-angle: -5deg; */
+  --background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  --background-odd: linear-gradient(45deg, #f64f59, #c471ed, #12c2e9);
+  position: relative;
+  display: flex;
+  padding: 2rem;
+  isolation: isolate;
+  margin-block: 3rem;
+}
+
+.card-diagonal:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.card-diagonal::after {
+  z-index: -1;
+  position: absolute;
+  content: '';
+  border-radius: 5px;
+  /* transform: skewY(var(--skew-angle)); */
+  /* background: var(--background); */
+  inset: 0;
+}
+
+/* .card-diagonal:nth-child(2n)::after {
+  background: var(--background-odd);
+} */
+
+.even-col {
+  padding: 1rem;
+}
+
+.profile {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-diagonal {
+    display: block;
+  }
+}
+
+.neon-border {
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+  /* animation: pulsate 1.5s infinite alternate; */
+  box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
+}
+
+.neon-text {
+  text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 10px #bc13fe,
+    0 0 45px #bc13fe,
+    0 0 55px #bc13fe,
+    0 0 70px #bc13fe,
+    0 0 80px #bc13fe;
+  color: #fff;
+}
+
+.neon-text:after {
+  opacity: 0;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 151px #bc13fe;
+  color: #fff;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.neon-text:after:hover {
+  opacity: 1;
+}
+
+/* @keyframes pulsate {
+  100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #bc13fe,
+      0 0 80px #bc13fe,
+      0 0 90px #bc13fe,
+      0 0 100px #bc13fe,
+      0 0 150px #bc13fe;
+  }
+
+  0% {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+  }
+} */
